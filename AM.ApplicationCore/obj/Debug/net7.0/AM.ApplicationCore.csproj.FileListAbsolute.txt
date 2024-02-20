@@ -34,3 +34,4 @@ C:\Users\rberr\OneDrive\Images\.net proj\AirportManagement\AM.ApplicationCore\ob
 C:\Users\rberr\OneDrive\Images\.net proj\AirportManagement\AM.ApplicationCore\obj\Debug\net7.0\AM.ApplicationCore.pdb
 C:\Users\rberr\OneDrive\Images\.net proj\AirportManagement\AM.ApplicationCore\obj\Debug\net7.0\ref\AM.ApplicationCore.dll
 C:\Users\rberr\OneDrive\Images\.net proj\AirportManagement\AM.ApplicationCore\obj\Debug\net7.0\AM.ApplicationCore.sourcelink.json
+C:\Users\rberr\OneDrive\Images\.net proj\AirportManagement\AM.ApplicationCore\obj\Debug\net7.0\AM.ApplicationCore.csproj.AssemblyReference.cache

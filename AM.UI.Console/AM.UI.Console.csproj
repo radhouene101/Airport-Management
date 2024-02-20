@@ -9,6 +9,15 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AM.ApplicationCore\AM.ApplicationCore.csproj" />
+    <ProjectReference Include="..\AM.Infrastructure\AM.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.16" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.16">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
 </Project>
