@@ -23,8 +23,8 @@ Flight f = new Flight() { Departure = "Tunis" ,
 //ToString
 Console.WriteLine(f);
 Console.WriteLine("*****CheckProfile*******");
-Passenger p1 = new Passenger() {FirstName="Amina"
-                                       ,LastName="Aoun"
+Passenger p1 = new Passenger() {FirstName="amina"
+                                       ,LastName="aoun"
                             ,EmailAdress="amina.aoun@esprit.tn"};
 Console.WriteLine(p1.CheckProfile("Amina","Aoun"));
 Console.WriteLine(p1.CheckProfile("Amina", "Aoun","a.gmail"));
@@ -60,3 +60,6 @@ fm.DestinationGroupedFlights();
 {
     
 }
+Console.WriteLine("&&&&&& CHANGE NAME &&&&&&&&&&&");
+p1.UpperFullName();
+Console.WriteLine(p1.FirstName + " "+ p1.LastName);

@@ -52,3 +52,4 @@ C:\Users\rberr\OneDrive\Images\.net proj\AirportManagement\AM.UI.Console\obj\Deb
 C:\Users\rberr\OneDrive\Images\.net proj\AirportManagement\AM.UI.Console\obj\Debug\net7.0\AM.UI.Console.pdb
 C:\Users\rberr\OneDrive\Images\.net proj\AirportManagement\AM.UI.Console\obj\Debug\net7.0\AM.UI.Console.genruntimeconfig.cache
 C:\Users\rberr\OneDrive\Images\.net proj\AirportManagement\AM.UI.Console\obj\Debug\net7.0\ref\AM.UI.Console.dll
+C:\Users\rberr\OneDrive\Images\.net proj\AirportManagement\AM.UI.Console\obj\Debug\net7.0\AM.UI.Console.sourcelink.json

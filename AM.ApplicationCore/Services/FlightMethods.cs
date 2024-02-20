@@ -24,14 +24,28 @@ namespace AM.ApplicationCore.Services
               return req.Average();
           } ;
       }
+
+      public double DurationAverage(string destination)
+      {
+          var req = (from f in Flights
+              where f.Destination == destination
+              select f.EstimatedDuration).Average();
+          var req2 = Flights.Where(f => f.Destination == destination).Average(f => f.EstimatedDuration);
+          return req;
+      }
         public List<DateTime> GetFlightDates(string destination)
         {
-            List<DateTime> dates = new List<DateTime>();
+            /*List<DateTime> dates = new List<DateTime>();
             foreach(Flight f in Flights)
             {
                 if (f.Destination == destination)
                     dates.Add(f.FlightDate);
-            }
+            }*/
+            List<DateTime> dates = (from f in Flights
+                where f.Destination == destination
+                select f.FlightDate).ToList();
+            dates = Flights.Where(f => f.Destination == destination).Select(f => f.FlightDate).ToList();
+            
             return dates;
         }
 
@@ -81,20 +95,23 @@ namespace AM.ApplicationCore.Services
                 select f);
             return req.Count();
         }
-        public double DurationAverage(string destination)
+        /*public double DurationAverage(string destination)
         {
             var req = from f in Flights
                 where f.Destination == destination
                 select f.EstimatedDuration;
             return req.Average();
-        }
+        }*/
 
         public IEnumerable<Traveller> SeniorTravellers(Flight f)
         {
             var req = from t in f.Passengers.OfType<Traveller>()
                 orderby t.BirthDate
                 select t;
+            var req2 = f.Passengers.OfType<Traveller>().OrderBy((t => t.BirthDate));
             return req.Take(3);
+            // pour ignorer les 3 premier on utilise Skip(3)
+            
         }
         public IEnumerable<IGrouping<string, Flight>> DestinationGroupedFlights()
         {
@@ -110,6 +127,15 @@ namespace AM.ApplicationCore.Services
                     
                 }
             }
+            return req;
+        }
+
+        public IEnumerable<Flight> OrderedDurationFlights(DateTime startDate)
+        {
+            var req = from f in Flights
+                where DateTime.Compare(startDate, f.FlightDate) < 0 && (f.FlightDate - startDate).TotalDays < 7
+                select f;
+            //var req2 = Flights.Where(f=>DateTime.Compare)
             return req;
         }
 
