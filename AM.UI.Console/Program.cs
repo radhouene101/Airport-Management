@@ -14,22 +14,29 @@ p.PlaneType = PlaneType.Boeing;
 //Flight f = new Flight("Paris","Tunis",new DateTime(2024,10,3,12,1,1)
 //    , new DateTime(2024, 10, 3, 13, 1, 1),120);
 //création d'un objet à travers l'initialiseur d'objets
-Flight f = new Flight() { Departure = "Tunis" ,
-                          Destination = "Paris",
-                          EstimatedDuration=120,
-                          FlightDate= new DateTime(2024, 10, 3, 12, 1, 1),
-                          EffectiveArrival= new DateTime(2024, 10, 3, 13, 1, 1)
-                        };
+Flight f = new Flight()
+{
+    Departure = "Tunis",
+    Destination = "Paris",
+    EstimatedDuration = 120,
+    FlightDate = new DateTime(2024, 10, 3, 12, 1, 1),
+    EffectiveArrival = new DateTime(2024, 10, 3, 13, 1, 1)
+};
 //ToString
 Console.WriteLine(f);
 Console.WriteLine("*****CheckProfile*******");
-Passenger p1 = new Passenger() {FirstName="amina"
-                                       ,LastName="aoun"
-                            ,EmailAdress="amina.aoun@esprit.tn"};
-Console.WriteLine(p1.CheckProfile("Amina","Aoun"));
-Console.WriteLine(p1.CheckProfile("Amina", "Aoun","a.gmail"));
-Console.WriteLine( "**********Passenger Type********");
-Staff s1= new Staff();
+Passenger p1 = new Passenger()
+{
+    FirstName = "amina"
+                                       ,
+    LastName = "aoun"
+                            ,
+    EmailAdress = "amina.aoun@esprit.tn"
+};
+Console.WriteLine(p1.CheckProfile("Amina", "Aoun"));
+Console.WriteLine(p1.CheckProfile("Amina", "Aoun", "a.gmail"));
+Console.WriteLine("**********Passenger Type********");
+Staff s1 = new Staff();
 Traveller t1 = new Traveller();
 p1.PassengerType();
 s1.PassengerType();
@@ -37,7 +44,7 @@ t1.PassengerType();
 FlightMethods fm = new FlightMethods();
 Console.WriteLine("**********GetFlightDates********");
 fm.Flights = TestData.listFlights;
-foreach(DateTime d in fm.GetFlightDates("Paris"))
+foreach (DateTime d in fm.GetFlightDates("Paris"))
     Console.WriteLine(d);
 Console.WriteLine("**********GetFlights********");
 fm.GetFlights("EstimatedDuration", "105");
@@ -55,11 +62,11 @@ foreach (Traveller t in fm.SeniorTravellers(TestData.flight1))
 Console.WriteLine("########DESTINATIONS GROUPED##########");
 fm.DestinationGroupedFlights();
 {
-    
+
 }
 {
-    
+
 }
 Console.WriteLine("&&&&&& CHANGE NAME &&&&&&&&&&&");
 p1.UpperFullName();
-Console.WriteLine(p1.FirstName + " "+ p1.LastName);
+Console.WriteLine(p1.FirstName + " " + p1.LastName);

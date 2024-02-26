@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AM.ApplicationCore.Domain
+﻿namespace AM.ApplicationCore.Domain
 {
     public class Passenger
     {
@@ -14,16 +8,16 @@ namespace AM.ApplicationCore.Domain
         public DateTime BirthDate { get; set; }
         public string EmailAdress { get; set; }
         public string PhoneNumber { get; set; }
-       //public bool CheckProfile(string prenom,string nom)
-       // {
-       //     return FirstName.Equals(prenom) && LastName.Equals(nom);
-       // }
-        public bool CheckProfile(string prenom, string nom,string email=null)
+        //public bool CheckProfile(string prenom,string nom)
+        // {
+        //     return FirstName.Equals(prenom) && LastName.Equals(nom);
+        // }
+        public bool CheckProfile(string prenom, string nom, string email = null)
         {
-            if(email!=null)
-            return FirstName.Equals(prenom) && LastName.Equals(nom)&&EmailAdress.Equals(email);
+            if (email != null)
+                return FirstName.Equals(prenom) && LastName.Equals(nom) && EmailAdress.Equals(email);
             else
-            return FirstName.Equals(prenom) && LastName.Equals(nom);
+                return FirstName.Equals(prenom) && LastName.Equals(nom);
 
         }
         public virtual void PassengerType()
