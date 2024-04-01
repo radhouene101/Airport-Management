@@ -15,7 +15,7 @@ namespace AM.ApplicationCore.Domain
         public int Capacity { get; set; }
         public PlaneType PlaneType { get; set; }
         //objets de navigation
-        public ICollection<Flight> Flights { get; set; }
+        public virtual ICollection<Flight> Flights { get; set; }
         public override string ToString()
         {
             return "Manufacture Date: " + ManufactureDate + " Plane Type: " + PlaneType;

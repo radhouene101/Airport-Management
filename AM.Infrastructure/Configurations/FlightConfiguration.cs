@@ -14,8 +14,8 @@ namespace AM.Infrastructure.Configurations
         public void Configure(EntityTypeBuilder<Flight> builder)
         {
             //*-*
-            builder.HasMany(f=>f.Passengers).WithMany(p=>p.Flights)
-                .UsingEntity(t=>t.ToTable("Reservations"));
+            /*builder.HasMany(f=>f.Passengers).WithMany(p=>p.Flights)
+                .UsingEntity(t=>t.ToTable("Reservations"));*/
             //1-*
             builder.HasOne(f => f.Plane).WithMany(p => p.Flights)
                 .HasForeignKey(o=>o.PlaneFk).OnDelete(DeleteBehavior.ClientSetNull);

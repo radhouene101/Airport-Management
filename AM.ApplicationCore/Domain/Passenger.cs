@@ -24,7 +24,9 @@ namespace AM.ApplicationCore.Domain
         [DataType(DataType.EmailAddress,ErrorMessage ="email invalide")]
         public string EmailAdress { get; set; }
         //[StringLength (8)]
-        public ICollection<Flight> Flights { get; set; }
+        //public ICollection<Flight> Flights { get; set; }
+
+        public virtual ICollection<Ticket> Ticket { get; set; }
 
         [RegularExpression("^[0-9]{8}$")]
         public string PhoneNumber { get; set; }

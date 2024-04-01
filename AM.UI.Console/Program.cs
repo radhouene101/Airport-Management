@@ -2,6 +2,7 @@
 
 using AM.ApplicationCore.Domain;
 using AM.ApplicationCore.Services;
+using AM.Infrastructure;
 
 Console.WriteLine("Hello, World!");
 //création d'un objet à travers le constructeur par défaut
@@ -51,10 +52,10 @@ Console.WriteLine("##############Duration Average#######");
 Console.WriteLine(fm.DurationAverage("Madrid"));
 
 Console.WriteLine("#####Senior Traveller#####");
-foreach (Traveller t in fm.SeniorTravellers(TestData.flight1))
+/*foreach (Traveller t in fm.SeniorTravellers(TestData.flight1))
 {
     Console.WriteLine(t.BirthDate);
-}
+}*/
 
 Console.WriteLine("########DESTINATIONS GROUPED##########");
 fm.DestinationGroupedFlights();
@@ -67,3 +68,16 @@ fm.DestinationGroupedFlights();
 Console.WriteLine("&&&&&& CHANGE NAME &&&&&&&&&&&");
 p1.UpperFullName();
 Console.WriteLine(p1.FullName.FirstName + " " + p1.FullName.LastName);
+
+//insert in the db
+AM_Context ct = new AM_Context();
+/*ct.Planes.Add(TestData.BoingPlane);
+ct.Planes.Add(TestData.Airbusplane);
+ct.Flights.Add(TestData.flight1);
+ct.Flights.Add(TestData.flight2);
+ct.SaveChanges();*/
+Console.WriteLine("ajout succ");
+foreach(Flight fl in ct.Flights)
+{
+    Console.WriteLine(fl.FlightDate + " destination "+ fl.Destination + " plance capacity "+ fl.Plane.Capacity);
+}

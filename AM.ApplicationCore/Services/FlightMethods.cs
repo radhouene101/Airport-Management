@@ -99,7 +99,7 @@ namespace AM.ApplicationCore.Services
             return req.Average();
         }*/
 
-        public IEnumerable<Traveller> SeniorTravellers(Flight f)
+        /*public IEnumerable<Traveller> SeniorTravellers(Flight f)
         {
             var req = from t in f.Passengers.OfType<Traveller>()
                       orderby t.BirthDate
@@ -108,7 +108,7 @@ namespace AM.ApplicationCore.Services
             return req.Take(3);
             // pour ignorer les 3 premier on utilise Skip(3)
 
-        }
+        }*/
         public IEnumerable<IGrouping<string, Flight>> DestinationGroupedFlights()
         {
             var req = from f in Flights

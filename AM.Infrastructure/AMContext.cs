@@ -11,6 +11,7 @@ public class AM_Context : DbContext
     public DbSet<Passenger> Passengers { get; set; }
     public DbSet<Traveller> Travellers { get; set; }
     public DbSet<Staff> Staffs { get; set; }
+    public DbSet<Ticket> Ticket { get; set; }
     //Configuration de la connexion
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -18,6 +19,7 @@ public class AM_Context : DbContext
                                               Initial Catalog=AirportManagementDB;
                                               Integrated Security=true;
                                               MultipleActiveResultSets=true");
+        optionsBuilder.UseLazyLoadingProxies();
         base.OnConfiguring(optionsBuilder);
     }
     //Régles de mapping Fluent API
@@ -39,7 +41,8 @@ public class AM_Context : DbContext
         //Configuer heritage table par type(TPT)
         modelBuilder.Entity<Staff>().ToTable("Staffs");
         modelBuilder.Entity<Traveller>().ToTable("Travellers");
-
+        // configurer la clé primaire de la porteuse de donnée
+        modelBuilder.Entity<Ticket>().HasKey(t => new { t.FlightFk, t.PassengerFK });
         base.OnModelCreating(modelBuilder);
     }
     protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
