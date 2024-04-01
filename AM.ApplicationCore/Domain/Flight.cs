@@ -1,4 +1,6 @@
-﻿namespace AM.ApplicationCore.Domain
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace AM.ApplicationCore.Domain
 {
     public class Flight
     {
@@ -11,6 +13,8 @@
         public string AirlineLogo { get; set; }
         //objets de navigation
         public Plane Plane { get; set; }
+        [ForeignKey("Plane")]
+        public int PlaneFk { get; set; }
         public ICollection<Passenger> Passengers { get; set; }
 
         public override string ToString()

@@ -27,10 +27,7 @@ Console.WriteLine(f);
 Console.WriteLine("*****CheckProfile*******");
 Passenger p1 = new Passenger()
 {
-    FirstName = "amina"
-                                       ,
-    LastName = "aoun"
-                            ,
+    FullName = new FullName { FirstName = "amina", LastName = "aoun" },
     EmailAdress = "amina.aoun@esprit.tn"
 };
 Console.WriteLine(p1.CheckProfile("Amina", "Aoun"));
@@ -69,4 +66,4 @@ fm.DestinationGroupedFlights();
 }
 Console.WriteLine("&&&&&& CHANGE NAME &&&&&&&&&&&");
 p1.UpperFullName();
-Console.WriteLine(p1.FirstName + " " + p1.LastName);
+Console.WriteLine(p1.FullName.FirstName + " " + p1.FullName.LastName);
